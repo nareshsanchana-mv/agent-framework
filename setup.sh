@@ -51,49 +51,8 @@ read -p "   Name [the principal]: " PRINCIPAL
 PRINCIPAL="${PRINCIPAL:-the principal}"
 echo ""
 
-# ─── 3. Naming convention ────────────────────────────────────────────────────
-echo -e "${CYAN}3. Naming convention${RESET}"
-echo -e "${DIM}   Agents need neutral names that don't signal their domain.${RESET}"
-echo ""
-echo "   1) Roman cognomina (default)"
-echo -e "      ${DIM}Cato, Varro, Seneca, Corvus, Regulus, Cassia, Livia, Marius...${RESET}"
-echo ""
-echo "   2) Norse sagas"
-echo -e "      ${DIM}Sigrid, Bjorn, Freya, Leif, Astrid, Gunnar, Ingrid, Ragna...${RESET}"
-echo ""
-echo "   3) Hellenic sages"
-echo -e "      ${DIM}Solon, Thales, Hypatia, Aspasia, Pericles, Zeno, Lycurgus, Diotima...${RESET}"
-echo ""
-read -p "   Choose [1]: " NAMING_CHOICE
-NAMING_CHOICE="${NAMING_CHOICE:-1}"
-
-case "$NAMING_CHOICE" in
-    1)
-        NAMING_TRADITION="Roman cognomina"
-        NAMING_DESCRIPTION="historical Roman names that are dignified, neutral, and large enough as a pool to scale"
-        NAMING_EXAMPLES="Cato, Varro, Seneca, Corvus, Regulus, Cassia, Livia, Marius, Titus, Praxis, Lucian, Nerva, Flavia, Sabina, Quintus, Aulus, Gaius, Tertia, Decima, Balbus"
-        ;;
-    2)
-        NAMING_TRADITION="Norse saga names"
-        NAMING_DESCRIPTION="names from Norse mythology and saga literature — strong, evocative, and drawn from a deep cultural well"
-        NAMING_EXAMPLES="Sigrid, Bjorn, Freya, Leif, Astrid, Gunnar, Ingrid, Ragna, Eirik, Sif, Tyr, Vidar, Brynhild, Ivar, Solveig, Arne, Dagny, Halvard, Rune, Thyra"
-        ;;
-    3)
-        NAMING_TRADITION="Hellenic names"
-        NAMING_DESCRIPTION="names from ancient Greek history and philosophy — associated with wisdom, governance, and systematic thought"
-        NAMING_EXAMPLES="Solon, Thales, Hypatia, Aspasia, Pericles, Zeno, Lycurgus, Diotima, Arete, Philo, Cleisthenes, Myia, Timaeus, Aristos, Charis, Hector, Melos, Doris, Xanthippe, Archon"
-        ;;
-    *)
-        echo "   Invalid choice. Using Roman cognomina."
-        NAMING_TRADITION="Roman cognomina"
-        NAMING_DESCRIPTION="historical Roman names that are dignified, neutral, and large enough as a pool to scale"
-        NAMING_EXAMPLES="Cato, Varro, Seneca, Corvus, Regulus, Cassia, Livia, Marius, Titus, Praxis, Lucian, Nerva, Flavia, Sabina, Quintus, Aulus, Gaius, Tertia, Decima, Balbus"
-        ;;
-esac
-echo ""
-
-# ─── 4. Install conventions ──────────────────────────────────────────────────
-echo -e "${CYAN}4. Installing conventions${RESET}"
+# ─── 3. Install conventions ──────────────────────────────────────────────────
+echo -e "${CYAN}3. Installing conventions${RESET}"
 
 if [ -f "$TARGET_REPO/Agents/CONVENTIONS.md" ]; then
     echo -e "   ${YELLOW}Agents/CONVENTIONS.md already exists in target repo.${RESET}"
@@ -110,16 +69,13 @@ if [ "$SKIP_CONVENTIONS" != "true" ]; then
 
     # Replace template markers
     sedi "s|{{PRINCIPAL}}|${PRINCIPAL}|g" "$TARGET_REPO/Agents/CONVENTIONS.md"
-    sedi "s|{{NAMING_TRADITION}}|${NAMING_TRADITION}|g" "$TARGET_REPO/Agents/CONVENTIONS.md"
-    sedi "s|{{NAMING_DESCRIPTION}}|${NAMING_DESCRIPTION}|g" "$TARGET_REPO/Agents/CONVENTIONS.md"
-    sedi "s|{{NAMING_EXAMPLES}}|${NAMING_EXAMPLES}|g" "$TARGET_REPO/Agents/CONVENTIONS.md"
 
     echo -e "   ${GREEN}Created $TARGET_REPO/Agents/CONVENTIONS.md${RESET}"
 fi
 echo ""
 
-# ─── 5. Install skills ───────────────────────────────────────────────────────
-echo -e "${CYAN}5. Skills installation${RESET}"
+# ─── 4. Install skills ───────────────────────────────────────────────────────
+echo -e "${CYAN}4. Skills installation${RESET}"
 echo -e "${DIM}   Two Claude Code skills power the agent system:${RESET}"
 echo -e "${DIM}     /agent        — router that activates agents${RESET}"
 echo -e "${DIM}     /create-agent — interactive agent builder${RESET}"
@@ -163,9 +119,9 @@ if [ "$SKIP_SKILLS" != "true" ]; then
 fi
 echo ""
 
-# ─── 6. CLAUDE.md integration (optional) ─────────────────────────────────────
+# ─── 5. CLAUDE.md integration (optional) ─────────────────────────────────────
 if [ -f "$TARGET_REPO/CLAUDE.md" ]; then
-    echo -e "${CYAN}6. CLAUDE.md integration${RESET}"
+    echo -e "${CYAN}5. CLAUDE.md integration${RESET}"
     echo -e "${DIM}   Add an agents section to your existing CLAUDE.md?${RESET}"
     read -p "   Add agents section? [Y/n]: " UPDATE_CLAUDE
     UPDATE_CLAUDE="${UPDATE_CLAUDE:-Y}"
@@ -198,7 +154,6 @@ echo -e "${BOLD}${GREEN}Setup complete.${RESET}"
 echo ""
 echo "   Target repo:     $TARGET_REPO"
 echo "   Principal:       $PRINCIPAL"
-echo "   Naming pool:     $NAMING_TRADITION"
 echo ""
 echo -e "${BOLD}Next steps:${RESET}"
 echo ""

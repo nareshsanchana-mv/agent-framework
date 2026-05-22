@@ -33,7 +33,7 @@ Each agent is a directory of markdown files under `Agents/`:
 Agents/<name>/
 ├── role.md          What the agent does — purpose, outcomes, boundaries
 ├── soul.md          How it communicates — voice, temperament, values
-├── name.md          The historical figure behind the name and why it fits
+├── name.md          The inspiration behind the name and why it fits
 ├── autonomy.md      Authority levels — what it owns vs. what it flags
 ├── actions.md       Standing to-do list, updated every session
 ├── context.md       Startup file paths and project references
@@ -93,13 +93,11 @@ When entries accumulate (>5 standing or >10 sessions), the agent consolidates in
 
 1. **Asks for your target repository** — any git repo where you want to use agents
 2. **Asks for your name** — the "principal" who directs agents (default: "the principal"). Used in conventions and skill files wherever agent-to-human interaction is described.
-3. **Asks for a naming convention** — agents need neutral names that don't signal their domain:
-   - **Roman cognomina** — Cato, Varro, Seneca, Corvus, Cassia, Livia...
-   - **Norse sagas** — Sigrid, Bjorn, Freya, Leif, Astrid, Gunnar...
-   - **Hellenic sages** — Solon, Thales, Hypatia, Aspasia, Pericles, Zeno...
-4. **Installs `Agents/CONVENTIONS.md`** in the target repo — the framework definition
-5. **Installs `/agent` and `/create-agent` skills** to `~/.claude/skills/` — the runtime harness
-6. **Optionally updates `CLAUDE.md`** — adds an agents table if one exists
+3. **Installs `Agents/CONVENTIONS.md`** in the target repo — the framework definition
+4. **Installs `/agent` and `/create-agent` skills** to `~/.claude/skills/` — the runtime harness
+5. **Optionally updates `CLAUDE.md`** — adds an agents table if one exists
+
+Agent names aren't picked up front — each agent is named at creation time when you run `/create-agent`, with tailored suggestions if you want ideas.
 
 ### Creating Your First Agent
 
@@ -131,12 +129,9 @@ The framework auto-detects two layouts:
 
 No configuration needed. The router globs for both patterns and uses whichever matches.
 
-### Custom Naming Pool
+### Naming
 
-Edit the **Naming** section of `Agents/CONVENTIONS.md` to use any naming convention. The only requirements are:
-- Names should not signal the agent's domain (a legal agent named "Ulpian" defeats the purpose)
-- The pool should be deep enough to scale (20+ names)
-- Each name should carry an archetype — a historical or mythological figure that gives the agent identity beyond its role
+There's no naming pool and no genre constraint. Each agent is named at creation time, and `/create-agent` offers tailored suggestions (Phase 5) drawn from whatever fits the role and soul — historical figures, fictional characters, concept words, ordinary first names. Only guidance: names shouldn't signal the agent's domain too literally ("Justice" for a legal agent, "Vault" for security), and reserved names live at the top of `Agents/CONVENTIONS.md`.
 
 ### Adding to CLAUDE.md
 

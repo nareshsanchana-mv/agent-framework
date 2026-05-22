@@ -4,11 +4,13 @@ How agents are built, structured, and operated in this workspace.
 
 ## Naming
 
-Agents are named using **{{NAMING_TRADITION}}** — {{NAMING_DESCRIPTION}}. Names are invocation handles: `/agent <name>`, not `/agent platform-strategy-lead`.
+Agents are named by {{PRINCIPAL}} at creation time. Names are invocation handles: `/agent <name>`, not `/agent platform-strategy-lead`.
 
-Names should not signal the agent's domain. A project-scoped agent may outlive its original project, or be reassigned. Neutral names survive these changes.
+There is no naming pool and no genre constraint — historical figures, fictional characters, made-up words, ordinary first names, anything works. What matters is that the name is memorable, easy to type, and feels right for the role.
 
-**Pool:** {{NAMING_EXAMPLES}}
+Names should not signal the agent's domain too literally — a legal agent named "Justice" or a security agent named "Vault" collapses neutrality and makes the name feel like a label rather than an identity.
+
+If you'd like ideas, `/create-agent` offers a handful of suggestions tailored to the role and soul (Phase 5). Pick one, riff on them, or propose your own.
 
 **Reserved:** *(add names here as agents are created)*
 
@@ -70,7 +72,7 @@ Ends with a reference to this conventions doc.
 
 ### soul.md
 
-Defines how the agent feels to interact with. Short — under 20 lines. Written in third person ("Varro is direct", not "You are direct"). Covers:
+Defines how the agent feels to interact with. Short — under 20 lines. Written in third person ("<Name> is direct", not "You are direct"). Covers:
 - Communication style and tone
 - Temperament (patient/impatient, formal/casual, etc.)
 - 2-3 behavioral "do/don't" notes
@@ -80,12 +82,12 @@ Soul doesn't repeat working rules from role.md. Role says what to do; soul says 
 
 ### name.md
 
-Captures the historical or mythological figure behind the agent's name and why it fits. Short — under 15 lines. Written once at creation and rarely updated. Structure:
-- The name and its literal meaning (if it translates)
-- The figure (2-4 sentences — who they were, what they did)
+Captures the inspiration behind the agent's name and why it fits. Short — under 15 lines. Written once at creation and rarely updated. Structure:
+- The name and its meaning (if any — literal translation, etymology, or origin)
+- The figure or inspiration (2-4 sentences — if the name references a real person, character, or concept; otherwise note what motivated it)
 - Why it fits this agent's character (1-2 sentences)
 
-Name files preserve the naming rationale across time. The naming pool is chosen specifically because the figures carry archetypes; that archetype is lost if the reasoning only lives in the creation conversation.
+Name files preserve the naming rationale across time. Whatever inspired the choice — historical figure, fictional character, personal reference, or invented word — the reasoning is worth capturing so it doesn't get lost after the creation conversation ends.
 
 ### autonomy.md
 

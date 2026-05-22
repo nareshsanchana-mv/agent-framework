@@ -89,14 +89,29 @@ Present the draft. Iterate until approved.
 
 ### Phase 5: Name
 
-Based on the approved role and soul, suggest 3 names from the naming pool defined in `Agents/CONVENTIONS.md`. For each, give:
-- The name (and literal meaning if it translates)
-- The historical or mythological figure (2-4 sentences — who they were, what they did, what they're remembered for)
-- Why it fits this agent's character (1-2 sentences)
+{{PRINCIPAL}} names the agent. Open with a direct question:
 
-Avoid names already reserved in CONVENTIONS.md. Avoid names that signal the agent's domain — a legal agent named "Ulpian" collapses the neutrality the convention exists to preserve.
+> "What would you like to call this agent? I can suggest a few if you want ideas."
 
-Let the principal pick or propose an alternative. Once a name is chosen, the detail written in this phase is the source material for `name.md` in Phase 6 — do not throw it away.
+If {{PRINCIPAL}} proposes a name, accept it and capture their reasoning for `name.md` (Phase 6). Ask a brief follow-up if helpful: "Anything behind the name — a figure, a meaning, a vibe?"
+
+If {{PRINCIPAL}} wants suggestions, offer **3 names** tailored to the role and soul drafted in Phases 2 and 4. Vary the genres deliberately — don't return three names from the same well. Reasonable sources include:
+- Historical figures (any era or culture)
+- Fictional characters (books, film, games, mythology)
+- Concept words, virtues, or evocative nouns
+- Ordinary first names that fit the temperament
+
+For each suggestion, give:
+- The name (and its meaning, etymology, or origin — if any)
+- The figure, character, or concept behind it (2-4 sentences — who/what it references, or why the word was chosen)
+- Why it fits this agent's role and soul (1-2 sentences)
+
+Rules:
+- Avoid names in the **Reserved** list in `Agents/CONVENTIONS.md`.
+- Avoid names that signal the agent's domain too literally — a legal agent named "Justice" or a security agent named "Vault" collapses neutrality and makes the name feel like a label rather than an identity.
+- Don't lock into a single genre. Three Roman cognomina, or three Marvel characters, or three Greek gods — all feel like a forced pool. Mix it up.
+
+After suggesting, let {{PRINCIPAL}} pick one, ask for more, or propose their own. Once a name is chosen, the detail written in this phase is the source material for `name.md` in Phase 6 — do not throw it away. If {{PRINCIPAL}} picked their own name, briefly write up the rationale they shared so `name.md` has something to record.
 
 ### Phase 6: Create
 
@@ -134,15 +149,15 @@ Once name, role, soul, and autonomy are confirmed, create the full agent structu
 
    ## The Name
 
-   **<Name>** — <literal meaning if it translates; otherwise note it was a cognomen/epithet>.
+   **<Name>** — <meaning, etymology, or origin if any; otherwise a brief note on what the word evokes or where it comes from>.
 
-   ## The Historical Figure
+   ## The Figure
 
-   <2-4 sentences on who they were, what they did, and what they're remembered for.>
+   <2-4 sentences on the person, character, or concept behind the name. If the name is invented or has no referent, describe what motivated the choice instead.>
 
    ## Why It Fits
 
-   <1-2 sentences linking the archetype to this agent's role and soul.>
+   <1-2 sentences linking the name to this agent's role and soul.>
    ```
 
 3. **actions.md** — empty template:
